@@ -7,7 +7,7 @@ public class ShrimpCounter : MonoBehaviour
     public static event Action<int> CountChanged;
 
     [SerializeField] private TMP_Text _countText = null;
-    [SerializeField] private GameObject _clickParticles = null;
+    [SerializeField] private GameObject _clickParticlesPrefab = null;
     [SerializeField] private AudioSource _audioSource = null;
     [SerializeField] private AudioClip _shotgunClip = null;
 
@@ -16,7 +16,6 @@ public class ShrimpCounter : MonoBehaviour
     private void Start()
     {
         _killCount = 0;
-        _clickParticles.SetActive(false);
 
         UpdateCount();
     }
@@ -31,8 +30,7 @@ public class ShrimpCounter : MonoBehaviour
         _killCount++;
         UpdateCount();
 
-        _clickParticles.SetActive(false);
-        _clickParticles.SetActive(true);
+        Instantiate(_clickParticlesPrefab);
 
         _audioSource.PlayOneShot(_shotgunClip);
 
