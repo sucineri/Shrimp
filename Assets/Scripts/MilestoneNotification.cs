@@ -59,14 +59,7 @@ class MilestoneNotification : MonoBehaviour
 
     private void ShowMessage(string Message)
     {
-        if (MessageBox == null)
-            return;
-
-        MessageBox.SetText(Message);
-
-        if (MilestoneAnimator != null)
-        {
-            MilestoneAnimator.SetTrigger(ShowAnimationTriggerName);
-        }
+        MessageBox?.SetText(Message);
+        MilestoneAnimator?.SetTrigger(ShowAnimationTriggerName);
     }
 }

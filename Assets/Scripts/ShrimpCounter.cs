@@ -9,6 +9,8 @@ public class ShrimpCounter : MonoBehaviour
     [SerializeField] private TMP_Text _countText = null;
     [SerializeField] private GameObject _clickParticlesPrefab = null;
     [SerializeField] private AudioSource _audioSource = null;
+    [SerializeField] private float _baseAudioPitch = 1.0f;
+    [SerializeField] private float _audioPitchVariance = 0.15f;
     [SerializeField] private AudioClip _shotgunClip = null;
 
     private int _killCount;
@@ -32,6 +34,7 @@ public class ShrimpCounter : MonoBehaviour
 
         Instantiate(_clickParticlesPrefab);
 
+        _audioSource.pitch = _baseAudioPitch + UnityEngine.Random.Range(-_audioPitchVariance, _audioPitchVariance);
         _audioSource.PlayOneShot(_shotgunClip);
 
         CountChanged?.Invoke(_killCount);

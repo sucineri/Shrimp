@@ -303,6 +303,8 @@ MonoBehaviour:
   _clickParticlesPrefab: {fileID: 4138904989361744403, guid: f4236e5102d874c34aedc85c9f5ecce1,
     type: 3}
   _audioSource: {fileID: 542536796}
+  _baseAudioPitch: 1.1
+  _audioPitchVariance: 0.25
   _shotgunClip: {fileID: 8300000, guid: 6ca4877f0259d41e299e77780517cc26, type: 3}
 --- !u!4 &542536795
 Transform:
