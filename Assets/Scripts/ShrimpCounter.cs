@@ -8,6 +8,8 @@ public class ShrimpCounter : MonoBehaviour
 
     [SerializeField] private TMP_Text _countText = null;
     [SerializeField] private GameObject _clickParticles = null;
+    [SerializeField] private AudioSource _audioSource = null;
+    [SerializeField] private AudioClip _shotgunClip = null;
 
     private int _killCount;
 
@@ -31,6 +33,8 @@ public class ShrimpCounter : MonoBehaviour
 
         _clickParticles.SetActive(false);
         _clickParticles.SetActive(true);
+
+        _audioSource.PlayOneShot(_shotgunClip);
 
         CountChanged?.Invoke(_killCount);
     }
