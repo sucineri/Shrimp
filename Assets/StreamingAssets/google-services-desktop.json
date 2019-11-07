@@ -1,47 +1,37 @@
 {
-  "project_info": {
-    "project_number": "552072301659",
-    "firebase_url": "https://shrimp-d34a0.firebaseio.com",
-    "project_id": "shrimp-d34a0",
-    "storage_bucket": "shrimp-d34a0.appspot.com"
-  },
   "client": [
     {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "552072301659-49ddba0r2h0breitqjibvoa2leet81h2.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH4bDIKXzDM7EolCj_DYPvNLkRrs_ejCY"
+        }
+      ], 
       "client_info": {
-        "mobilesdk_app_id": "1:552072301659:android:cfb9dc14c00e447aa2437e",
+        "mobilesdk_app_id": "1:552072301659:ios:98430b46bbd88d44a2437e", 
         "android_client_info": {
           "package_name": "com.mess.shrimp"
         }
-      },
-      "oauth_client": [
-        {
-          "client_id": "552072301659-6sof594cg5s0rspdl11v0vsbmifiqhf6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCK8MCbbpHvWMC1b7GFxaapLOaLPpvI4sg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "552072301659-6sof594cg5s0rspdl11v0vsbmifiqhf6.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "552072301659-49ddba0r2h0breitqjibvoa2leet81h2.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mess.shrimp"
-              }
-            }
-          ]
-        }
       }
     }
-  ],
-  "configuration_version": "1"
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "shrimp-d34a0.appspot.com", 
+    "project_id": "shrimp-d34a0", 
+    "firebase_url": "https://shrimp-d34a0.firebaseio.com", 
+    "project_number": "552072301659"
+  }
 }

@@ -17,7 +17,7 @@ public class ShrimpCounter : MonoBehaviour
 
     private void Start()
     {
-        _killCount = 0;
+        _killCount = (int)LeaderboardRepo.Instance.Score;
 
         UpdateCount();
     }
@@ -37,6 +37,7 @@ public class ShrimpCounter : MonoBehaviour
         _audioSource.pitch = _baseAudioPitch + UnityEngine.Random.Range(-_audioPitchVariance, _audioPitchVariance);
         _audioSource.PlayOneShot(_shotgunClip);
 
+        LeaderboardRepo.Instance.UpdateScore(_killCount);
         CountChanged?.Invoke(_killCount);
     }
 }
