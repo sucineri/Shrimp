@@ -19,6 +19,9 @@ class MilestoneNotification : MonoBehaviour
     private Dictionary<int, string> Messages = new Dictionary<int, string>();
 
     [SerializeField]
+    private List<string> RandomMessages = new List<string>();
+
+    [SerializeField]
     private TMP_Text MessageBox;
 
     [SerializeField]
@@ -26,6 +29,10 @@ class MilestoneNotification : MonoBehaviour
 
     [SerializeField]
     private string ShowAnimationTriggerName;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    private float MessageProbability = 0.5f;
 
     private void Start()
     {
@@ -51,9 +58,22 @@ class MilestoneNotification : MonoBehaviour
 
     public void OnCountChanged(int Count)
     {
+        // if we have a curated message, show that
         if (Messages.TryGetValue(Count, out string MessageText))
         {
             ShowMessage(MessageText);
+            return;
+        }
+
+        if (RandomMessages.Count == 0)
+            return;
+
+        // otherwise, roll try to show a randomized message
+        var Roll = UnityEngine.Random.Range(0.0f, 1.0f);
+        if (Roll <= MessageProbability)
+        {
+            int Index = UnityEngine.Random.Range(0, RandomMessages.Count);
+            ShowMessage(RandomMessages[Index]);
         }
     }
 

@@ -219,19 +219,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MessageData:
+  - RequiredCount: 1
+    MessageText: Let's goooooo!
   - RequiredCount: 5
-    MessageText: Just gettin' started!
+    MessageText: Just getting warmed up!
   - RequiredCount: 10
-    MessageText: Keep 'em comin'!
+    MessageText: You're on a roll!
   - RequiredCount: 15
-    MessageText: Feel the burn!
+    MessageText: 15? Not bad, but we need to keep moving!
   - RequiredCount: 20
     MessageText: Score!!!
   - RequiredCount: 25
-    MessageText: Get it!
+    MessageText: SO HUNGRY!
+  - RequiredCount: 30
+    MessageText: That's my secret, Captain. I'm always hungry.
+  - RequiredCount: 35
+    MessageText: Keep it going! Nobody's gonna stop us!
+  - RequiredCount: 38
+    MessageText: This is where Owen gave up last year. Don't be an Owen.
+  - RequiredCount: 39
+    MessageText: You are a categorically better person than Owen. It's not a high
+      bar.
+  - RequiredCount: 45
+    MessageText: Feeling the meat sweats yet? From shrimp. Don't think about it too
+      much, stinky.
+  - RequiredCount: 50
+    MessageText: FIFTY! You've killed FIFTY of them. Oh, the humanity.
+  - RequiredCount: 51
+    MessageText: And you're still going? Absolutely disgusting.
+  - RequiredCount: 52
+    MessageText: Seriously? You're still doing this?
+  - RequiredCount: 53
+    MessageText: You should really reconsider your life choices.
+  - RequiredCount: 54
+    MessageText: How many calories do you think you've consumed?
+  - RequiredCount: 55
+    MessageText: What about your cholesterol? What would your doctor say?
+  - RequiredCount: 56
+    MessageText: OK. Fine. You're committed to the cause.
+  - RequiredCount: 60
+    MessageText: 60 Is a good place to quit. I'm just sayin'.
+  - RequiredCount: 65
+    MessageText: Think of all the shrimp you've killed.
+  - RequiredCount: 70
+    MessageText: You're definitely top tier.
+  - RequiredCount: 75
+    MessageText: What, are you going for 100?
+  - RequiredCount: 80
+    MessageText: Things only get tougher from here on out.
+  - RequiredCount: 85
+    MessageText: This is where Laura and Christian gave up last year. You can beat
+      them. They're a joke.
+  - RequiredCount: 86
+    MessageText: Yeah, that'll show them. Chumps.
+  - RequiredCount: 90
+    MessageText: Now you HAVE to get 100.
+  - RequiredCount: 91
+    MessageText: Keep going, you're almost there...
+  - RequiredCount: 92
+    MessageText: Don't stop to think about what you're doing to your body.
+  - RequiredCount: 93
+    MessageText: All the regrets just keep piling up.
+  - RequiredCount: 94
+    MessageText: But now isn't the time for regrets.
+  - RequiredCount: 95
+    MessageText: Now is the time for shrimp. 5 more to go.
+  - RequiredCount: 96
+    MessageText: 4
+  - RequiredCount: 97
+    MessageText: 3
+  - RequiredCount: 98
+    MessageText: 2
+  - RequiredCount: 99
+    MessageText: JUST ONE MORE!!!
+  - RequiredCount: 100
+    MessageText: YOU'VE DONE IT! Good job, Terence.
+  - RequiredCount: 101
+    MessageText: OK, it's time stop.
+  - RequiredCount: 102
+    MessageText: Seriously, stop eating and go home.
+  - RequiredCount: 103
+    MessageText: Terence, STOP!
+  - RequiredCount: 104
+    MessageText: You'll regret this tomorrow.
+  RandomMessages:
+  - Get it!
+  - Feel the burn!
+  - I believe in you!
+  - Keep going!
+  - Keep 'em comin'!
+  - Aww yiss.
+  - You're an animal!
+  - YOU'RE A MONSTER!!!
+  - Absolutely horrific.
+  - Look at you go!
+  - GOGOGOGOGOGO!
+  - Go go go!
+  - The carnage...
   MessageBox: {fileID: 5913463173427136253}
   MilestoneAnimator: {fileID: 5913463173204285542}
   ShowAnimationTriggerName: Play
+  MessageProbability: 0.5
 --- !u!1 &5913463173427136255
 GameObject:
   m_ObjectHideFlags: 0
