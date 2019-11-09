@@ -68,6 +68,11 @@ public class LeaderboardRepo
         _database.Child(UserID).SetValueAsync(entry.ToDictionary());
     }
 
+    public void ResetLeaderboard()
+    {
+        _database.SetRawJsonValueAsync("{}");
+    }
+
     private void OnValueChanged(object sender, ValueChangedEventArgs args)
     {
         if (args.DatabaseError != null)
