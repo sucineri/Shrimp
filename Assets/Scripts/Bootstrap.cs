@@ -1,22 +1,22 @@
-﻿using UnityEngine;
+﻿using Firebase;
+using Firebase.Unity.Editor;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private float _delayTime = 1f;
 
-    float _startTime;
-
-    void Start()
+    IEnumerator Start()
     {
-        _startTime = Time.timeSinceLevelLoad + _delayTime;
-    }
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://shrimp-d34a0.firebaseio.com/");
+        LeaderboardRepo.CreateInstance();
+        StartCoroutine(LeaderboardRepo.Instance.GetLeaderboard());
 
-    void Update()
-    {
-        if (Time.timeSinceLevelLoad > _startTime)
-        {
-            SceneManager.LoadScene("Main");
-        }
+        yield return new WaitForSeconds(_delayTime);
+        yield return new WaitUntil(() => LeaderboardRepo.Instance.Initialized);
+
+        SceneManager.LoadScene("Main");
     }
 }

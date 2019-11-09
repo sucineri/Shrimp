@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Firebase.Database;
 using Newtonsoft.Json;
@@ -15,6 +16,7 @@ public class LeaderboardRepo
         Instance = new LeaderboardRepo();
     }
 
+    public bool Initialized { get; private set; }
     public string UserID { get; private set; }
     public string UserName { get; private set; }
     public float Score { get; private set; }
@@ -43,15 +45,15 @@ public class LeaderboardRepo
         UpdateScore(0f);
     }
 
-    public void GetLeaderboard()
+    public IEnumerator GetLeaderboard()
     {
-        _database.GetValueAsync().ContinueWith(task =>
+        var task = _database.GetValueAsync();
+        while (!task.IsCompleted)
         {
-            if (task.IsCompleted)
-            {
-                NotifyLeaderboardChanged(task.Result);
-            }
-        });
+            yield return null;
+        }
+        NotifyLeaderboardChanged(task.Result);
+        Initialized = true;
     }
 
     public void UpdateScore(float score)
@@ -91,15 +93,24 @@ public class LeaderboardRepo
 
         var dict = JsonConvert.DeserializeObject<Dictionary<string, LeaderboardEntry>>(json);
         Leaderboard.Clear();
+
+        var userExist = false;
         foreach (var kv in dict)
         {
             if (kv.Key == UserID)
             {
+                userExist = true;
                 UserName = kv.Value.Name;
                 Score = kv.Value.Score;
             }
 
             Leaderboard.Add(kv.Value);
+        }
+
+        if (!userExist)
+        {
+            UserID = string.Empty;
+            PlayerPrefs.DeleteKey(_userIDKey);
         }
 
         Leaderboard.Sort((a, b) =>
